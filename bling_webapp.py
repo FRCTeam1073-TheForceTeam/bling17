@@ -106,7 +106,8 @@ def network_table_value_listener(table, key, value, isNew):
     if network_table_cmd_check is not None:
         network_table_cmd_check.cmd_received()
 
-    bling.process_cmd(value)
+    if key == 'Bling_Command':
+        bling.process_cmd(value)
 
 class NetworkTableCmdRcvdCheck(Thread):
     def __init__(self, event):
@@ -195,7 +196,7 @@ if __name__ == "__main__":
     NetworkTables.addConnectionListener(network_table_connection_listener, immediateNotify=True)
 
     # and create the bling table instance and install the table listener
-    bling_table = NetworkTables.getTable('Bling')
+    bling_table = NetworkTables.getTable('1073Table')
     bling_table.addTableListener(network_table_value_listener)
 
     # start the thread which will check for commands being received from the network tables
