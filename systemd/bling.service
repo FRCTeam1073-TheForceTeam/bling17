@@ -1,0 +1,18 @@
+#
+# bling.service
+#
+[Unit]
+Description=FRC 1073 Bling Service
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+WorkingDirectory=/home/pi/GitHub/bling17
+ExecStart=/usr/bin/python bling_webapp.py -i 10.10.73.2 -s 2 -l 36 
+
+[Install]
+WantedBy=multi-user.target
+
