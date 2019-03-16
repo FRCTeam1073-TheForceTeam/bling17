@@ -11,7 +11,7 @@ Restart=always
 RestartSec=1
 User=pi
 WorkingDirectory=/home/pi/GitHub/bling17
-ExecStart=/usr/bin/python bling_webapp.py -i 10.10.73.2 -s 2 -l 36 
+ExecStart=/usr/bin/python bling_webapp.py -i 10.10.73.2 -s 2 -l 32 
 
 [Install]
 WantedBy=multi-user.target
